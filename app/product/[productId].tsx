@@ -27,6 +27,7 @@ export default function ProductDetailsScreen() {
       name: product.name,
       price: product.price,
       quantity: 1,
+      image: product.image
     });
 
     // Show toast when item is added to cart

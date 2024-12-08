@@ -5,7 +5,6 @@ import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import { CartProvider } from "./context/cardContext";
 import Toast from "react-native-toast-message";
 import { AddIcon, Icon } from "@/components/ui/icon";
-// Import the Icon component
 
 export default function RootLayout() {
   return (
@@ -14,7 +13,7 @@ export default function RootLayout() {
         <Toast />
         <Tabs>
           <Tabs.Screen
-            name="index"
+            name="index" // This corresponds to app/index.tsx
             options={{
               title: "Home",
               tabBarIcon: () => (
@@ -26,7 +25,7 @@ export default function RootLayout() {
             }}
           />
           <Tabs.Screen
-            name="cart"
+            name="cart" // This corresponds to app/cart.tsx
             options={{
               title: "Cart",
               tabBarIcon: () => (
@@ -35,6 +34,26 @@ export default function RootLayout() {
                   className="text-typography-500 m-2 w-5 h-4"
                 />
               ),
+            }}
+          />
+
+          <Tabs.Screen
+            name="rijan" // This corresponds to app/cart.tsx
+            options={{
+              title: "Rijan",
+              tabBarIcon: () => (
+                <Icon
+                  as={AddIcon}
+                  className="text-typography-500 m-2 w-5 h-4"
+                />
+              ),
+            }}
+          />
+          <Tabs.Screen
+            name="product/[productId]" // Dynamic route
+            options={{
+              tabBarButton: () => null, // Hides this route from the Tab bar
+              headerShown: false, // Optional: Hides the header if needed
             }}
           />
         </Tabs>
