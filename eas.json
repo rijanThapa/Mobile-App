@@ -1,0 +1,11 @@
+{
+  "builds": {
+    "android": {
+      "preview": {
+        "workflow": "managed",
+        "distribution": "internal",
+        "releaseChannel": "preview"
+      }
+    }
+  }
+}
