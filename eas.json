@@ -1,10 +1,12 @@
 {
-  "builds": {
-    "android": {
-      "preview": {
-        "workflow": "managed",
-        "buildType": "app-bundle"
-      }
-    }
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {}
   }
 }
