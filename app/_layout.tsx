@@ -29,7 +29,12 @@ export default function RootLayout() {
             name="cart"
             options={{
               title: "Cart",
-              tabBarIcon: () => <Icon name="shopping-cart" size={24} />,
+              tabBarIcon: () => (
+                <Icon
+                  as={AddIcon}
+                  className="text-typography-500 m-2 w-5 h-4"
+                />
+              ),
             }}
           />
         </Tabs>
