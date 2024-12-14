@@ -5,55 +5,50 @@ import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import { CartProvider } from "./context/cardContext";
 import Toast from "react-native-toast-message";
 import { AddIcon, Icon } from "@/components/ui/icon";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function RootLayout() {
   return (
     <CartProvider>
       <GluestackUIProvider>
         <Toast />
-        <Tabs>
+        <Tabs
+          screenOptions={{
+            tabBarActiveTintColor: "blue",
+          }}
+        >
           <Tabs.Screen
-            name="index" // This corresponds to app/index.tsx
+            name="index"
             options={{
               title: "Home",
-              tabBarIcon: () => (
-                <Icon
-                  as={AddIcon}
-                  className="text-typography-500 m-2 w-5 h-4"
-                />
+              tabBarIcon: ({ color }) => (
+                <MaterialIcons name="home" size={24} color={color} />
               ),
             }}
           />
           <Tabs.Screen
-            name="cart" // This corresponds to app/cart.tsx
+            name="cart"
             options={{
               title: "Cart",
-              tabBarIcon: () => (
-                <Icon
-                  as={AddIcon}
-                  className="text-typography-500 m-2 w-5 h-4"
-                />
-              ),
-            }}
-          />
-
-          <Tabs.Screen
-            name="rijan" // This corresponds to app/cart.tsx
-            options={{
-              title: "Rijan",
-              tabBarIcon: () => (
-                <Icon
-                  as={AddIcon}
-                  className="text-typography-500 m-2 w-5 h-4"
-                />
+              tabBarIcon: ({ color }) => (
+                <MaterialIcons name="shopping-cart" size={24} color={color} />
               ),
             }}
           />
           <Tabs.Screen
-            name="product/[productId]" // Dynamic route
+            name="addProduct"
             options={{
-              tabBarButton: () => null, // Hides this route from the Tab bar
-              headerShown: false, // Optional: Hides the header if needed
+              title: "Add Product",
+              tabBarIcon: ({ color }) => (
+                <MaterialIcons name="add" size={24} color={color} />
+              ),
+            }}
+          />
+          <Tabs.Screen
+            name="product/[productId]"
+            options={{
+              tabBarButton: () => null,
+              headerShown: false,
             }}
           />
         </Tabs>
