@@ -125,14 +125,20 @@ const FormComponent = () => {
             )}
 
             <Text className="mt-2">Description</Text>
+
             <Controller
               control={control}
               render={({ field: { onChange, value } }) => (
-                <Textarea size="md">
+                <Textarea size="md" style={{ minHeight: 100, paddingTop: 10 }}>
                   <TextareaInput
+                    multiline={true}
                     placeholder="Product description"
                     onChangeText={onChange}
                     value={value}
+                    style={{
+                      textAlignVertical: "top", 
+                      paddingTop: 0, 
+                    }}
                   />
                 </Textarea>
               )}
