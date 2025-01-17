@@ -45,6 +45,15 @@ export default function RootLayout() {
             }}
           />
           <Tabs.Screen
+            name="Login"
+            options={{
+              title: "Login",
+              tabBarIcon: ({ color }) => (
+                <MaterialIcons name="add" size={24} color={color} />
+              ),
+            }}
+          />
+          <Tabs.Screen
             name="product/[productId]"
             options={{
               tabBarButton: () => null,

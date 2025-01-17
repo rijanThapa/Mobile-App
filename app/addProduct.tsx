@@ -91,6 +91,7 @@ const FormComponent = () => {
               render={({ field: { onChange, value } }) => (
                 <Input variant="outline" size="md" className="mt-2">
                   <InputField
+                    
                     style={{ height: 50 }}
                     placeholder="Enter the product name"
                     value={value}
