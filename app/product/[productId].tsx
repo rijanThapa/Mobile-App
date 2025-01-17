@@ -15,7 +15,7 @@ export default function ProductDetailsScreen() {
   const { productId } = useLocalSearchParams<{ productId: string }>();
   const product = products.find((p) => p.id == Number(productId));
   const { addToCart   } = useContext(CartContext);
-  const toast = useToast(); // Initialize toast
+  const toast = useToast(); 
 
   if (!product) {
     return <Text>Product not found.</Text>;
@@ -27,6 +27,7 @@ export default function ProductDetailsScreen() {
       name: product.name,
       price: product.price,
       quantity: 1,
+      image: product.image
     });
 
     // Show toast when item is added to cart
