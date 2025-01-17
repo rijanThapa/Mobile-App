@@ -15,7 +15,7 @@ export default function ProductDetailsScreen() {
   const { productId } = useLocalSearchParams<{ productId: string }>();
   const product = products.find((p) => p.id == Number(productId));
   const { addToCart   } = useContext(CartContext);
-  const toast = useToast(); // Initialize toast
+  const toast = useToast(); 
 
   if (!product) {
     return <Text>Product not found.</Text>;

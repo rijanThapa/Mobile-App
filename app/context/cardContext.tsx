@@ -5,13 +5,13 @@ type CartItem = {
   name: string;
   price: number;
   quantity: number;
-  image: string; // Add image as a string type, assuming it's a URL or path to an image
+  image: string;
 };
 
 type CartContextType = {
   cart: CartItem[];
   addToCart: (item: CartItem) => void;
-  removeFromCart: (id: string) => void; // Note: Changed to lowercase `string`
+  removeFromCart: (id: string) => void;
   clearCart: () => void;
 };
 
